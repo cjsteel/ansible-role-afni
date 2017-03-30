@@ -13,6 +13,7 @@
 
   vars:
 
+    - afni_bashrc_file : ../files/bashrc
     - afni_remote_user : 'ubuntu'
     - afni_shell: 'tcsh' # 'bash'...
     - afni_shell_path: chsh -s /bin/{{ afni_shell }}

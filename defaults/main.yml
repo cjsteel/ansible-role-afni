@@ -3,6 +3,7 @@
 
 ## Installation options
 
+afni_bashrc_file : files/bashrc
 afni_tcsh_support  : true
 afni_motif_support : true
 afni_gnome_stuff   : true
