@@ -2,7 +2,7 @@
 ansible-role-afni
 =================
 
-An Ansible role to install and manage **ANFI** (Analysis of Functional NeuroImages)
+An Ansible role to install and manage **ANFI** (**An**alysis of **F**unctional **N**euroImages)
 
 
 Description
@@ -15,6 +15,7 @@ Description
 - By default, most AFNI command line instructions assume that tcsh is the chosen shell for a terminal. Also, many Message Board postings and scripts in demos, which may be useful for reference, are written in tcsh. So, the choice is yours, but choose wisely...
 - Can probably be installed by users to home directories
 - Ansible installer could add acemenu entry.
+
 
 
 Resources
