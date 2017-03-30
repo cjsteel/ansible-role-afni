@@ -66,13 +66,17 @@
 
 ## Create link
 
-- name: "create link 'ln -s /usr/lib/x86_64-linux-gnu/libgsl.so /usr/lib/libgsl.so.0'"
+#- name: "create link 'ln -s /usr/lib/x86_64-linux-gnu/libgsl.so /usr/lib/libgsl.so.0'"
+#  become: true
+#  file:
+#    src: '/usr/lib/x86_64-linux-gnu/libgsl.so'
+#    dest: '/usr/lib/libgsl.so.0'
+#    state: link
+#    force: yes
+
+- name: "create link 'ln -sf /usr/lib/x86_64-linux-gnu/libgsl.so /usr/lib/libgsl.so.0'"
   become: true
-  file:
-    src: '/usr/lib/x86_64-linux-gnu/libgsl.so'
-    dest: '/usr/lib/libgsl.so.0'
-    state: link
-    force: yes
+  command: ln -sf /usr/lib/x86_64-linux-gnu/libgsl.so /usr/lib/libgsl.so.0
 
 ##
 
@@ -97,4 +101,13 @@
     state: present
   tags: [ 'packages', 'libxp6_1.0.2-2_amd64.deb' ]
 
+- name: "Make “tcsh” the default shell."
+  become: true
+  command: chsh -s /usr/bin/tcsh
+
+- name: "Make “tcsh” the default shell."
+  command: curl -O https://afni.nimh.nih.gov/pub/dist/bin/linux_fedora_21_64/@update.afni.binaries
+
+- name: "install the appropriate AFNI package"
+  command: tcsh @update.afni.binaries -package linux_openmp_64 -do_extras
 
