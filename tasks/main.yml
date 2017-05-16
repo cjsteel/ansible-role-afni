@@ -8,7 +8,7 @@
 - name: "update apt cache"
   become: true
   apt: update_cache=yes cache_valid_time=43200
-  tags: [ 'packages', 'ants-requirements' ]
+  tags: [ 'packages', 'anfi-requirements' ]
 
 ## Ensure requirements are installed
 
@@ -62,7 +62,7 @@
     - mesa-utils
     - freeglut3
   when: afni_opengl_option == true
-  tags: [ 'packages', 'afni-option', 'tcsh' ]
+  tags: [ 'packages', 'afni-options', 'tcsh' ]
 
 ## Create link
 
