@@ -7,7 +7,7 @@ dependencies:
 
       - name : "ensure for /etc/skel/.bashrc"
         path : '/etc/skel/.bashrc'
-        src  : './{{ afni_bashrc_file }}'
+        src  : '{{ fact_role_path }}/{{ afni_bashrc_file }}'
         force : no
         state: "copy"
 

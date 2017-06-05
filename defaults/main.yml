@@ -5,6 +5,11 @@
 
 afni_bashrc_file   : files/bashrc
 afni_remote_user : 'ubuntu'
+afni_tcsh_support  : true
+afni_motif_support : true
+afni_gnome_stuff   : true
+afni_opengl_option : true
+
 afni_shell: 'tcsh' # 'bash'...
 afni_shell_path: chsh -s /bin/{{ afni_shell }}
 
