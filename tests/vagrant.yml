@@ -5,11 +5,20 @@
   become: false # or local directory creation will fail
   pre_tasks:
 
+    - set_fact: fact_role_name=vagrant
+
     - set_fact: fact_controller_user="{{ lookup('env','USER') }}"
     - debug: var=fact_controller_user
 
     - set_fact: fact_controller_home="{{ lookup('env','HOME') }}"
     - debug: var=fact_controller_home
+
+    - set_fact: fact_project_path="{{ lookup('pipe','pwd') }}"
+    - debug: var=fact_project_path
+
+    - set_fact: fact_role_path="{{ lookup('pipe','pwd') }}/roles/{{ fact_role_name }}"
+    - debug: var=fact_role_path
+
 
   vars:
 

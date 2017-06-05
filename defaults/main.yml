@@ -3,12 +3,28 @@
 
 ## Installation options
 
-afni_bashrc_file : files/bashrc
-afni_tcsh_support  : true
-afni_motif_support : true
-afni_gnome_stuff   : true
-afni_opengl_option : true
+afni_bashrc_file   : files/bashrc
+afni_remote_user : 'ubuntu'
+afni_shell: 'tcsh' # 'bash'...
+afni_shell_path: chsh -s /bin/{{ afni_shell }}
 
-afni_ver  : '1.0.2-2'
+# package
+
+afni_ver           : '1.0.2-2'
+afni_pkg           : 'libxp6_{{ afni_ver }}_{{ afni_arch }}.deb'
+afni_deb_url       : 'http://mirrors.kernel.org/ubuntu/pool/main/libx/libxp/{{ afni_pkg }}'
 afni_resources_dir : '{{ fact_controller_home }}/src/afni/{{ afni_ver }}'
+  
+#    - skel_entries:
+#      - path: "/etc/skel/.ssh"
+#        mode: "0700"
+#        state: "directory"
+#      - path: "/etc/skel/passwd"
+#        src: "/etc/passwd"
+#        state: "link"
+
+
+
+
+
  
